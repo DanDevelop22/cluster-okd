@@ -1,0 +1,37 @@
+- name: Instalar dependencias base
+  apt:
+    name:
+      - curl
+      - gnupg
+      - software-properties-common
+    state: present
+    update_cache: yes
+
+- name: Agregar llave GPG de HashiCorp
+  apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Agregar repositorio oficial de HashiCorp
+  apt_repository:
+    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com jammy main"
+    filename: hashicorp
+    state: present
+    update_cache: yes
+
+- name: Instalar Vagrant
+  apt:
+    name: vagrant
+    state: present
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install dependencies
+  apt:
+    name:
+      - git
+      - wget
+      - ansible
+      - virtualbox
+    state: present

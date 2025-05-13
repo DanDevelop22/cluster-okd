@@ -1,0 +1,5 @@
+- name: Setup Ubuntu Host for OKD
+  hosts: localhost
+  become: yes
+  roles:
+    - host-setup

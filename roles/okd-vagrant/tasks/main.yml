@@ -1,0 +1,12 @@
+- name: Ensure Vagrantfile is copied
+  copy:
+    src: "{{ playbook_dir }}/vagrant/"
+    dest: /opt/okd-vagrant/
+    remote_src: no
+
+
+# --------------------------Descomentar en Linux----------------------------
+# - name: Run Vagrant up
+#   command: vagrant up
+#   args:
+#     chdir: /opt/okd-vagrant/

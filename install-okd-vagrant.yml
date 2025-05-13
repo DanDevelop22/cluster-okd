@@ -1,0 +1,5 @@
+- name: Deploy OKD cluster with Vagrant
+  hosts: localhost
+  become: yes
+  roles:
+    - okd-vagrant
